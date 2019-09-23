@@ -6,7 +6,7 @@ function UserDAO(connection){
     this._connection = connection()
 }
 
-UserDAO.prototype.signUp = function(req, res, user){
+UserDAO.prototype.SignUp = function(req, res, user){
     this._connection.open( function(err, mongoclient) {
         mongoclient.collection("user", function(err, collection){
 
@@ -49,7 +49,7 @@ UserDAO.prototype.Auth = function(req, res, user){
                     req.session.auth = token //Variavel de sessão
                     req.session.email = result[0].email //Variavel de sessão
 
-                    res.status(200).json({'msg': 'Loged In.'})
+                    res.status(200).json({'msg': 'Loged In.', 'token': token})
                 }else{
                     // res.render('index', {validacao: {}, dadosForm: user, msg: 'A'})
                     res.status(400).json({'msg': 'Wrong credentials.'})

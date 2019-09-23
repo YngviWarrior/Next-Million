@@ -21,5 +21,5 @@ module.exports.signUp = function(application, req, res){
     var connection = application.config.dbConnection
     var UserDAO = new application.app.models.UserDAO(connection)
     
-    UserDAO.signUp(req, res, dadosForm)    
+    UserDAO.SignUp(req, res, dadosForm)    
 }
