@@ -1,6 +1,6 @@
 var crypto = require('crypto')
 var jwt = require('jsonwebtoken')
-require('dotenv-safe').config();
+require('dotenv-safe');
 
 function UserDAO(connection){
     this._connection = connection()
